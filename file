@@ -1,0 +1,21 @@
+pip install -r requirements.txt
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+.\.venv\Scripts\activate.bat
+deactivate 
+python -m app.main 
+
+docker compose down
+docker compose build --no-cache
+docker compose up -d
+
+docker ps
+docker logs secureai_api
+
+
+
+docker compose down
+docker compose start
+
+docker stop secureai_api
+docker stop secureai_redis
+

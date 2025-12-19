@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "faae9e46-77e9-4b4a-b909-9011cc0f420d",
+		"name": "LLM (protected)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28862731"
+	},
+	"item": [
+		{
+			"name": "Generate with Phi",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Ollama health-check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
