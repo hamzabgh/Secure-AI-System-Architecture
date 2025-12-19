@@ -53,7 +53,7 @@ signal.signal(signal.SIGTERM, shutdown_handler)
 
 if __name__ == "__main__":
     uvicorn.run(
-        "app.main:app",   # adjust if path different
+        "app.main:app",   
         host="0.0.0.0",
         port=8000,
         reload=settings.debug,
