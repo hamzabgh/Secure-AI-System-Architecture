@@ -90,20 +90,28 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 services:
   redis:
     image: redis:7-alpine
-    ports: ["6379:6379"]
+    container_name: secureai_redis
+    command: redis-server --save 60 1 --loglevel warning
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+
   api:
     build: .
-    ports: ["8000:8000"]
+    container_name: secureai_api
+    ports:
+      - "8000:8000"
     environment:
       REDIS_URL: redis://redis:6379/0
-      OLLAMA_BASE_URL: http://ollama:11434
-    depends_on: [redis]
-  ollama:
-    image: ollama/ollama
-    ports: ["11434:11434"]
-    volumes: [ollama:/root/.ollama]
-volumes:
-  ollama:
+    depends_on:
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./app:/app/app
+
 ```
 
 Start everything:
