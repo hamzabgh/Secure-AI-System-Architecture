@@ -1,4 +1,4 @@
-```markdown
+
 # Premium Secure AI Backend – README
 
 A **production-grade**, **Zero-Trust**, **GPU-aware** AI-inference API that exposes **OpenAI** and **local Ollama** models (Phi, Llama-2, Mistral, etc.) through a **single hardened endpoint**.
