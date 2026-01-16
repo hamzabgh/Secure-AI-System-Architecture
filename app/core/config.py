@@ -19,7 +19,6 @@ class Settings(BaseSettings):
     argon2_memory_cost: int = 131072
     argon2_parallelism: int = 8
     
-    # Rate Limiting
     redis_url: str = "redis://localhost:6379/0"
     
     # APIs

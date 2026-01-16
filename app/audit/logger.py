@@ -22,7 +22,7 @@ class JSONFormatter(logging.Formatter):
 class AuditLogger:
     def __init__(self):
         self.logger = logging.getLogger("audit")
-        if not self.logger.handlers:          # avoid duplicate handlers
+        if not self.logger.handlers:         
             handler = logging.StreamHandler()
             handler.setFormatter(JSONFormatter())
             self.logger.addHandler(handler)

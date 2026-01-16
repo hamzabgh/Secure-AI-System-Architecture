@@ -41,7 +41,6 @@ def create_app() -> FastAPI:
 app = create_app()
 
 
-# 🔹 Proper Ctrl+C handling
 def shutdown_handler(sig, frame):
     print("\n🛑 Shutting down FastAPI gracefully...")
     sys.exit(0)

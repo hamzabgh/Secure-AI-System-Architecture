@@ -6,7 +6,7 @@ __pycache__/
 
 # Environment variables
 .env
-
+.file
 # Docker
 *.log
 *.pid

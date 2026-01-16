@@ -43,6 +43,6 @@ async def get_scoped_token(
         user_token,
         body.model,
         body.max_tokens,
-        body.scopes          # <-- here
+        body.scopes         
     )
     return {"llm_token": llm_token, "expires_in": 60}

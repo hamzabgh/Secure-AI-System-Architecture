@@ -10,7 +10,6 @@ class AuthService:
     """
     
     def __init__(self):
-        # In production, use actual user database
         self.users_db = {
             "admin": {
                 "hashed_password": security.hash_password("secure_admin_pass"),
@@ -22,7 +21,6 @@ class AuthService:
         """Authenticate user and return user JWT"""
         user = self.users_db.get(username)
         if not user:
-            # Timing attack protection - still hash dummy
             security.verify_password("dummy", security.hash_password("dummy"))
             return None
         
